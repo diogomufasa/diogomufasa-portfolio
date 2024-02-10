@@ -71,7 +71,7 @@ export default function Home() {
           <div>
             <TypeAnimation
               sequence={[
-                'A Junior Dev.',
+                'A Junior Developer.',
                 1000,
                 () => {},
                 'A student.',
