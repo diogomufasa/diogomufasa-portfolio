@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { styles } from './constants';
 import { useTheme } from 'next-themes';
 
@@ -10,8 +11,10 @@ const Footer = () => {
 
   return (
     <div className={styles.wrapper}>
-      <img
+      <Image
         src={`/logos/logo-${currentTheme}.svg`}
+        width={100}
+        height={100}
         alt='logo'
         className={styles.logo}
       />

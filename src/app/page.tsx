@@ -71,7 +71,7 @@ export default function Home() {
           <div>
             <TypeAnimation
               sequence={[
-                'A Fullstack Developer.',
+                'A Junior Dev.',
                 1000,
                 () => {},
                 'A student.',
@@ -93,17 +93,7 @@ export default function Home() {
             />
           </div>
           <div>
-            <TypeAnimation
-              sequence={[
-                'I am a 16-year-old passionate student from the coastal beauty of Portugal, I am currently at high-school and I have been coding for 2 years now. I am available for remote opportunities and internships. I am also open to collaborations and projects. Feel free to reach out to me.',
-                1000,
-                () => {},
-              ]}
-              wrapper='p'
-              cursor={true}
-              repeat={0}
-              style={{ display: 'inline-block' }}
-            />
+            <p className='inline-block'>I am a 16-year-old passionate student from the coastal beauty of Portugal, I am currently at high-school and I have been coding for 2 years now. I am available for remote opportunities and internships. I am also open to collaborations and projects. Feel free to reach out to me.</p>
           </div>
         </div>
 
