@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.wrapper {
+  @apply w-full sm:w-[550px];
+}
+
+h1 {
+  @apply text-xl font-medium;
+}
+
+span,
+p {
+  font-size: 15px;
+  text-align: justify;
+  @apply dark:text-slate-300;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active {
+  @apply bg-black text-white dark:bg-white dark:text-black;
+}
+
+.divider {
+  margin: 20px 0px 20px 0px;
+  width: 100%;
+  @apply border border-slate-100 dark:border-zinc-900;
+}
+
+.card-shadow {
+  @apply shadow-lg dark:bg-zinc-900 dark:shadow-black;
+}
+
+.badge-circular {
+  padding: 10px;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 50px;
+  @apply shadow-lg dark:bg-zinc-900 dark:shadow-black;
+}
+
+.animateOn {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 1s;
+}
+
+.animateOff {
+  opacity: 0;
+  transform: translateX(-5%);
+  transition: ease-out 0.5s;
+}
+
+.academic_card:nth-child(2) {
+  transition-delay: 50ms;
+}
+
+.academic_card:nth-child(3) {
+  transition-delay: 350ms;
+}
+
+.academic_card:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+.experience_card:nth-child(1) {
+  transition-delay: 50ms;
+}
+
+.experience_card:nth-child(2) {
+  transition-delay: 350ms;
+}
+
+.experience_card:nth-child(3) {
+  transition-delay: 600ms;
+}
+
+.skill_card:nth-child(1) {
+  transition-delay: 50ms;
+}
+
+.skill_card:nth-child(2) {
+  transition-delay: 350ms;
+}
+
+.skill_card:nth-child(3) {
+  transition-delay: 600ms;
+}
+
+.feed_card:nth-child(1) {
+  transition-delay: 50ms;
+}
+
+.feed_card:nth-child(2) {
+  transition-delay: 350ms;
+}
+
+.feed_card:nth-child(3) {
+  transition-delay: 600ms;
+}
+
+.verticalLineWrapper {
+  margin-left: 10px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.verticalLine {
+  width: 3px;
+  background-color: rgb(67, 133, 67);
+  transition: height 0.5s ease-in-out;
+}
+
+.icon {
+  @apply text-lg cursor-pointer;
+}
+
+.glassmorphism {
+  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+}
+
+.g-transition {
+  @apply transition duration-300 ease-in-out hover:bg-green-700 hover:text-white;
+}
