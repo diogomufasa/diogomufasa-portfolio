@@ -3,8 +3,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
-import Image from 'next/image';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import TabNavigation from '@/Components/TabNavigation';
 import ContextWrapper from '@/Components/ContextWrapper';
 import Footer from '@/Components/Footer';
@@ -25,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`p-5 py-[50px]`}>
+        <SpeedInsights />
         <Analytics />
         <div className='flex-center w-'>
           <ContextWrapper>
