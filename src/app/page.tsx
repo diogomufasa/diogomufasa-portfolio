@@ -66,7 +66,7 @@ export default function Home() {
         <div className={pageStyles.title}>
           <JobStatus />
           <label className='text-[2rem] max-[460px]:text-[1.8rem] sm:text-[2.4rem] font-bold'>
-            Hey, I'm Diogo Soromenho
+            Hey, I'm Diogo Moreira
           </label>
           <div>
             <TypeAnimation
