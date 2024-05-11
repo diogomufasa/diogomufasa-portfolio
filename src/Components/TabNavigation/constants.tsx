@@ -11,7 +11,7 @@ import { TAB_ITEMS } from './interface';
 export const DEFAULT_TAB_ITEMS: TAB_ITEMS[] = [
   { title: 'Feed', path: '/', icon: <LuLayoutDashboard /> },
   { title: 'Projects', path: '/projects', icon: <LuShoppingBag /> },
-  { title: 'Contact', path: '/contacts', icon: <LuContact /> },
+  { title: 'Contact', path: '/contact-me', icon: <LuContact /> },
 ];
 
 export const MEDIA_TAB_ITEMS = [
@@ -20,12 +20,12 @@ export const MEDIA_TAB_ITEMS = [
     path: 'https://github.com/diogomufasa',
     icon: <LuGithub />,
   },
-  // {
-  //   title: 'Linkedin',
-  //   path: 'https://www.linkedin.com/',
-  //   icon: <LuLinkedin />,
-  // },
-  { title: 'Email', path: 'mailto:diogo.soromenho@mail.com', icon: <LuMail /> },
+  {
+    title: 'Linkedin',
+    path: '#',
+    icon: <LuLinkedin />,
+  },
+  // { title: 'Email', path: 'mailto:diogo.soromenho@mail.com', icon: <LuMail /> },
 ];
 
 // styles classname

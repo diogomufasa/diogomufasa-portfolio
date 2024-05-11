@@ -15,7 +15,7 @@ const ExperienceCard = ({
 }: ExperienceCardProps) => {
   return (
     <div className='experience_card w-full flex-between mb-5 animateOff'>
-      <div className='h-[70px] w-[100px] flex justify-center items-center  rounded border-r-2 border-green-500 hidden sm:flex'>
+      <div className='h-[70px] w-[100px] flex justify-center items-center  rounded border-r-2 border-green-500 hidden sm:flex dark:bg-slate-100'>
         <Image 
         src={logo}
         width={50}

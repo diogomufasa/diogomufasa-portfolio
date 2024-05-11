@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Diogo Soromenho',
   description:
     'Diogo Soromenho, a passionate software developer based in Portugal',
-  icons: 'favicon.png',
+  icons: 'favicon.ico',
   keywords: 'Diogo Soromenho, Portfolio, Website, developer, software',
 };
 
