@@ -112,9 +112,9 @@ export default function Home() {
                 id='stop1'
                 className='hidden text-3xl text-green-700 rounded-ful stop1'
               />
-            </div>
+            </div>        
             <AcademicCard
-              logo='/logos/marista-logo.svg'
+              logo='/logos/maristas-logo.svg'
               collegeName='Colegio Marista de Carcavelos'
               courseName='Secondary/High School'
               courseDuration='2019 - 2024'

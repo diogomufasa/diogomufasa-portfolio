@@ -30,8 +30,8 @@ const Card: React.FC<CardType> = ({
         <div className={styles.imgContainer}>
           <Image
             src={image}
-            alt=''
-            height={200}
+            alt={title}
+            height={250}
             width={300}
           />
         </div>

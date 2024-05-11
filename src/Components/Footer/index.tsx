@@ -19,7 +19,7 @@ const Footer = () => {
         className={styles.logo}
       />
       <div className={styles.text}>
-        <span>© Copyright 2023 Diogo Soromenho</span>
+        <span>© Copyright 2023 Diogo Moreira</span>
       </div>
     </div>
   );

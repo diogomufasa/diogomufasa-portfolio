@@ -1,4 +1,5 @@
 import { startCase, toLower } from 'lodash';
+import { FormData } from '../types';
 
 export const getTitleCase = (word: string): string => {
   if (!word || !word?.length) return '';
@@ -17,4 +18,37 @@ export function isValidLink(link: string) {
   ); // fragment locator
   // return !!urlPattern.test(link);
   return true;
+}
+
+export function isValidEmail(email: string) {
+  const emailPattern = new RegExp(
+    '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+  );
+  return !!emailPattern.test(email);
+}
+
+export function sendEmail(data: FormData) {
+  const apiEndpoint = '/api/email';
+
+  fetch(apiEndpoint, {
+    method: 'POST',
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      alert(response.message);
+    })
+    .catch((err) => {
+      alert(err);
+    });
+}
+
+export function redirectTo(url: string) {
+  window.location
+    ? (window
+        .location as any)
+        .assign(url)
+    : (window.location as any).replace(url);
+      
+
 }
