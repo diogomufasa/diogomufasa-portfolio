@@ -17,14 +17,12 @@ const ContactForm = () => {
       return;
     }
     sendEmail(data);
-  };
-
-  const handleFormSubmit = () => {
-
     setTimeout(() => {
       setSubmitted(true);
     }, 2000);
-  }
+
+
+  };
 
 
   return (
@@ -79,7 +77,7 @@ const ContactForm = () => {
               required
             />
           </div>
-          <button className={contactStyles.submitButton} onClick={handleFormSubmit}>
+          <button className={contactStyles.submitButton}>
             Send Message
           </button>
         </form>
