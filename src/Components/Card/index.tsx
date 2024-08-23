@@ -29,6 +29,7 @@ const Card: React.FC<CardType> = ({
         <p className={styles.para}>{description.toUpperCase()}</p>
         <div className={styles.imgContainer}>
           <Image
+            className={styles.image}
             src={image}
             alt={title}
             height={250}
