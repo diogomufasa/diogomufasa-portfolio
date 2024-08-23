@@ -20,11 +20,11 @@ export const MEDIA_TAB_ITEMS = [
     path: 'https://github.com/diogomufasa',
     icon: <LuGithub />,
   },
-  {
-    title: 'Linkedin',
-    path: '#',
-    icon: <LuLinkedin />,
-  },
+  // {
+  //   title: 'Linkedin',
+  //   path: '#',
+  //   icon: <LuLinkedin />,
+  // },
   // { title: 'Email', path: 'mailto:diogo.soromenho@mail.com', icon: <LuMail /> },
 ];
 

@@ -1,15 +1,16 @@
 'use client';
 
-import {useState} from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { pageStyles } from '@/Constants';
 import { contactStyles } from './constant';
 import type { FormData } from '@/types';
 import { isValidEmail, sendEmail, redirectTo } from '@/Lib/utils';
+import { ContactMeContext } from '@/Contexts/ContextContactMe';
 
 const ContactForm = () => {
   const { register, handleSubmit } = useForm<FormData>();
-  const [submitted, setSubmitted] = useState(false);
+  const { HasContacted, setHasContacted } = useContext(ContactMeContext);
   
   const onSubmit = (data: FormData) => {
     if (!isValidEmail(data.email)) {
@@ -18,7 +19,9 @@ const ContactForm = () => {
     }
     sendEmail(data);
     setTimeout(() => {
-      setSubmitted(true);
+      if (data !== null || data !== undefined) {
+        setHasContacted(true);
+      }
     }, 2000);
 
 
@@ -28,7 +31,7 @@ const ContactForm = () => {
   return (
     <>
       <div className={pageStyles.wrapper}>
-        {submitted ? (
+        {HasContacted ? (
           <div className={contactStyles.successMessage}>
             <p>Thank you! Your message has been sent successfully!</p>
           </div>

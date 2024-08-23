@@ -1,4 +1,4 @@
-import { getTitleCase } from '@/Lib/utils';
+import { getTitleCase, redirectTo } from '@/Lib/utils';
 import { useTheme } from 'next-themes';
 import { useCallback, useState } from 'react';
 
@@ -10,7 +10,6 @@ const useTabNavigation = () => {
   const currentTheme = theme === 'light' ? 'light' : 'dark';
   const themeTooltipContent = `${getTitleCase(currentTheme)} Theme`;
 
-  const redirectTo = (path: string) => window.open(path, '_blank');
   const getCalculatedMargninY = (index: number, totalSize: number) =>
     index + 1 === totalSize ? 'my-0' : 'mb-3';
   const handleOpenTabNavigation = useCallback(

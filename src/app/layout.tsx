@@ -5,8 +5,9 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import TabNavigation from '@/Components/TabNavigation';
-import ContextWrapper from '@/Components/ContextWrapper';
+import ContextWrapper from '@/Contexts/ContextWrapper';
 import Footer from '@/Components/Footer';
+import { ContactMeProvider } from '@/Contexts/ContextContactMe';
 
 export const metadata: Metadata = {
   title: 'Diogo Soromenho',
@@ -28,8 +29,10 @@ export default function RootLayout({
         <Analytics />
         <div className='flex-center w-'>
           <ContextWrapper>
+            <ContactMeProvider>
             <TabNavigation />
             {children}
+            </ContactMeProvider>
           </ContextWrapper>
           <Footer />
         </div>
