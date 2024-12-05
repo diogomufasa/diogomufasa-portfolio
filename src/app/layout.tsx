@@ -3,7 +3,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import TabNavigation from '@/Components/TabNavigation';
 import ContextWrapper from '@/Contexts/ContextWrapper';
 import Footer from '@/Components/Footer';
@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   description:
     'Diogo Soromenho, a passionate software developer based in Portugal',
   icons: 'favicon.ico',
-  keywords: 'Diogo Soromenho, Portfolio, Website, developer, software',
+  keywords:
+    'Diogo Soromenho, Diogo Moreira,  Portfolio, Website, developer, software',
 };
 
 export default function RootLayout({
@@ -30,8 +31,8 @@ export default function RootLayout({
         <div className='flex-center w-'>
           <ContextWrapper>
             <ContactMeProvider>
-            <TabNavigation />
-            {children}
+              <TabNavigation />
+              {children}
             </ContactMeProvider>
           </ContextWrapper>
           <Footer />
