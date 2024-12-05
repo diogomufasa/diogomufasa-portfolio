@@ -2,7 +2,7 @@
 
 # Welcome👋
 
-> Here is the preview of the website https://wwww.diogomoreira.tech
+> Here is the preview of the website https://www.diogomoreira.tech
 
 ## ©️ License
 
