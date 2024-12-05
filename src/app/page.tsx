@@ -93,7 +93,13 @@ export default function Home() {
             />
           </div>
           <div>
-            <p className='inline-block'>I am a 16-year-old passionate student from the coastal beauty of Portugal, I am currently at high-school and I have been coding for 2 years now. I am available for remote opportunities and internships. I am also open to collaborations and projects. Feel free to reach out to me.</p>
+            <p className='inline-block'>
+              I am a 17-year-old passionate student from the coastal beauty of
+              Portugal, I am currently at high-school and I have been coding for
+              3 years now. I am available for remote opportunities and
+              internships. I am also open to collaborations and projects. Feel
+              free to reach out to me.
+            </p>
           </div>
         </div>
 
@@ -112,7 +118,7 @@ export default function Home() {
                 id='stop1'
                 className='hidden text-3xl text-green-700 rounded-ful stop1'
               />
-            </div>        
+            </div>
             <AcademicCard
               logo='/logos/maristas-logo.svg'
               collegeName='Colegio Marista de Carcavelos'
