@@ -66,7 +66,7 @@ export default function Home() {
         <div className={pageStyles.title}>
           <JobStatus />
           <label className='text-[2rem] max-[460px]:text-[1.8rem] sm:text-[2.4rem] font-bold'>
-            Hey, I'm Diogo Moreira
+            Hey, I'm Diogo Soromenho
           </label>
           <div>
             <TypeAnimation
@@ -95,7 +95,7 @@ export default function Home() {
           <div>
             <p className='inline-block'>
               I am a 17-year-old passionate student from the coastal beauty of
-              Portugal, I am currently at high-school and I have been coding for
+              Portugal, I am currently in high-school and I have been coding for
               3 years now. I am available for remote opportunities and
               internships. I am also open to collaborations and projects. Feel
               free to reach out to me.
