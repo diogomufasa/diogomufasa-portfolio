@@ -1,6 +1,5 @@
 import {
   SiGit,
-  SiAzuredevops,
   SiHtml5,
   SiCss3,
   SiJavascript,
@@ -10,14 +9,13 @@ import {
   SiNodedotjs,
   SiDotnet,
   SiMysql,
-  SiCsharp,
 } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
 
 export const Skills = {
   services: [
     { name: 'Git', Icon: <SiGit /> },
-    { name: 'Azure', Icon: <SiAzuredevops /> },
+    { name: 'Azure', Icon: <SiGit /> },
   ],
   frontend: [
     { name: 'HTML', Icon: <SiHtml5 /> },
@@ -31,7 +29,7 @@ export const Skills = {
   backend: [
     { name: 'Node.js', Icon: <SiNodedotjs /> },
     { name: '.Net', Icon: <SiDotnet /> },
-    { name: 'C#', Icon: <SiCsharp /> },
+    { name: 'C#', Icon: <SiDotnet /> },
   ],
   database: [{ name: 'Mysql', Icon: <SiMysql /> }],
 };

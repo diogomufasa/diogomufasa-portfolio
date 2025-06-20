@@ -8,13 +8,14 @@ export const pageStyles = {
 
 export const CARD_ITEMS = [
   {
-    title: 'Ai Fusion',
-    description: 'nextjs, Typescript, tailwind',
-    image: '/images/project-aifusion.png',
-    link: 'https://aifusion.vercel.app/',
-    github: 'https://github.com/diogomufasa/AI-Fusion',
-    id: 4,
+    title: 'Breakup SIM',
+    description: 'HTML, CSS, JAVASCRIPT',
+    image: '/images/project-breakupapp.png',
+    link: 'https://breakupapp.netlify.app/',
+    github: 'https://github.com/diogomufasa/ai-breakup-generator',
+    id: 5,
   },
+
   {
     title: 'MyCreative',
     description: 'Mysql, C#, .NET, MVC, TYPESCRIPT, REACT',
@@ -22,6 +23,15 @@ export const CARD_ITEMS = [
     github: 'https://github.com/diogomufasa/MyCreativeExperience',
     id: 3,
   },
+  {
+    title: 'Ai Fusion',
+    description: 'nextjs, Typescript, tailwind',
+    image: '/images/project-aifusion.png',
+    link: 'https://aifusion.vercel.app/',
+    github: 'https://github.com/diogomufasa/AI-Fusion',
+    id: 4,
+  },
+
   {
     title: 'Template Portfolio website',
     description: 'NEXTJS, TAILWIND, REACT, JAVASCRIPT, VERCEL',
