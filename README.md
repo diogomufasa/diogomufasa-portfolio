@@ -1,8 +1,6 @@
-
-
 # Welcome👋
 
-> Here is the preview of the website https://www.diogomoreira.tech
+> Here is the preview of the website https://www.diogosoromenho.me
 
 ## ©️ License
 

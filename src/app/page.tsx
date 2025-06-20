@@ -141,7 +141,7 @@ export default function Home() {
         </>
 
         <div className={pageStyles.divider}></div>
-        <>
+        {/* <>
           <Subheader title='Work Experience' icon={<IoIosLaptop />} />
           <div className={`${pageStyles.feed_child2} flex-between flex-wrap`}>
             <ExperienceCard
@@ -154,7 +154,7 @@ export default function Home() {
               workingHours='Internship'
             />
           </div>
-        </>
+        </> */}
 
         <div className={pageStyles.divider}></div>
 
