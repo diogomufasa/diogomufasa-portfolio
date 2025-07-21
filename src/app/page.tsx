@@ -141,20 +141,20 @@ export default function Home() {
         </>
 
         <div className={pageStyles.divider}></div>
-        {/* <>
+        <>
           <Subheader title='Work Experience' icon={<IoIosLaptop />} />
           <div className={`${pageStyles.feed_child2} flex-between flex-wrap`}>
             <ExperienceCard
               logo='/logos/bi4all-logo.svg'
-              companyName='Bi4all'
-              position='Fullstack Developer'
-              engagedDuration=''
-              skills={['python', 'C#', '.NET', 'mysql']}
-              jobType='On-site'
-              workingHours='Internship'
+              companyName='BI4ALL'
+              position='Internship'
+              engagedDuration='2 months'
+              skills={['Python', 'AI & Machine Learning']}
+              jobType='Hybrid'
+              workingHours='Full-time'
             />
           </div>
-        </> */}
+        </>
 
         <div className={pageStyles.divider}></div>
 
@@ -164,10 +164,11 @@ export default function Home() {
             icon={<MdWorkspacePremium />}
           />
           <div className={`${pageStyles.feed_child2} flex flex-wrap`}>
-            <SkillsCard title='Services' items={Skills.services} />
             <SkillsCard title='Frontend' items={Skills.frontend} />
             <SkillsCard title='Backend' items={Skills.backend} />
+            <SkillsCard title='Services' items={Skills.services} />
             <SkillsCard title='Database' items={Skills.database} />
+
           </div>
         </div>
       </div>
