@@ -9,27 +9,30 @@ import {
   SiNodedotjs,
   SiDotnet,
   SiMysql,
+  SiPython,
 } from 'react-icons/si';
-import { TbBrandNextjs } from 'react-icons/tb';
+import { TbBrandNextjs, TbBrandCSharp } from 'react-icons/tb';
+import { VscAzure } from "react-icons/vsc";
 
 export const Skills = {
   services: [
     { name: 'Git', Icon: <SiGit /> },
-    { name: 'Azure', Icon: <SiGit /> },
+    { name: 'Azure', Icon: <VscAzure /> },
   ],
   frontend: [
     { name: 'HTML', Icon: <SiHtml5 /> },
     { name: 'CSS', Icon: <SiCss3 /> },
     { name: 'Javascript', Icon: <SiJavascript /> },
     { name: 'React', Icon: <SiReact /> },
-    { name: 'Next.JS', Icon: <TbBrandNextjs /> },
+    { name: 'Next.js', Icon: <TbBrandNextjs /> },
     { name: 'Tailwind CSS', Icon: <SiTailwindcss /> },
     { name: 'Motion', Icon: <SiFramer /> },
   ],
   backend: [
     { name: 'Node.js', Icon: <SiNodedotjs /> },
     { name: '.Net', Icon: <SiDotnet /> },
-    { name: 'C#', Icon: <SiDotnet /> },
+    { name: 'C#', Icon: <TbBrandCSharp /> }, 
+    { name: 'Python', Icon: <SiPython /> },
   ],
-  database: [{ name: 'Mysql', Icon: <SiMysql /> }],
+  database: [{ name: 'MySQL', Icon: <SiMysql /> }],
 };
