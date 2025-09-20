@@ -1,52 +1,30 @@
-'use client';
-
-import Card from '@/Components/Card';
 import Subheader from '@/Components/Subheader/page';
-import { pageStyles, CARD_ITEMS } from '@/Constants';
-import React, { useEffect } from 'react';
+import { pageStyles } from '@/Constants';
 import { LuSearch } from 'react-icons/lu';
+import { createClient } from '@/utils/supabase/server';
+import ProjectsFeedClient from './ProjectsClient';
 
-const ProjectFeed = () => {
-  useEffect(() => {
-    const observers = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('animateOff');
-          entry.target.classList.add('animateOn');
-        } else {
-          entry.target.classList.add('animateOff');
-          entry.target.classList.remove('animateOn');
-        }
-      });
-    });
+export const revalidate = 0;
 
-    const blocks = document.querySelectorAll('.animateOff');
+export default async function ProjectFeed() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('Projects').select('*')
 
-    blocks.forEach(ele => observers.observe(ele));
-  }, []);
+  if (error) {
+    console.error('Supabase error fetching projects:', JSON.stringify(error, null, 2));
+  }
+
+  const projects = data ?? [];
 
   return (
-    <>
-      <div className={pageStyles.wrapper}>
-        <Subheader title='Projects' icon={<LuSearch />} />
-        <div className={pageStyles.feed_child2}>
-          {CARD_ITEMS.map((d: any, i: number) => {
-            return (
-              <Card
-                key={i}
-                id={d.id}
-                title={d.title}
-                description={d.description}
-                image={d.image}
-                link={d.link}
-                github={d.github}
-              />
-            );
-          })}
-        </div>
+    <div className={pageStyles.wrapper}>
+      <Subheader title='Projects' icon={<LuSearch />} />
+      <div className={pageStyles.feed_child2}>
+        <ProjectsFeedClient projects={projects} />
+        {projects.length === 0 && !error && <p>No projects found.</p>}
+        {error && <p>Failed to load projects.</p>}
       </div>
-    </>
+    </div>
   );
-};
-
-export default ProjectFeed;
+}

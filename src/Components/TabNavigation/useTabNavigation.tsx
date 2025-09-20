@@ -1,4 +1,4 @@
-import { getTitleCase, redirectTo } from '@/Lib/utils';
+import { getTitleCase, redirectTo } from '@/utils/utils';
 import { useTheme } from 'next-themes';
 import { useCallback, useState } from 'react';
 

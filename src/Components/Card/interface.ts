@@ -2,9 +2,10 @@ type Link = string;
 
 export interface CardType {
   title: string;
-  description: string;
+  tags: string;
   image: string;
   link: Link;
   github: Link;
   id: number;
+  description?: string;
 }

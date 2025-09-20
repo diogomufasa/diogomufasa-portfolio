@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { pageStyles } from '@/Constants';
 import { contactStyles } from './constant';
 import type { FormData } from '@/types';
-import { isValidEmail, sendEmail, redirectTo } from '@/Lib/utils';
+import { isValidEmail, sendEmail, redirectTo } from '@/utils/utils';
 import { ContactMeContext } from '@/Contexts/ContextContactMe';
 
 const ContactForm = () => {
