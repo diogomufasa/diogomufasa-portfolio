@@ -123,7 +123,7 @@ export default function Home() {
               logo='/logos/maristas-logo.svg'
               collegeName='Colegio Marista de Carcavelos'
               courseName='Secondary/High School'
-              courseDuration='2019 - 2024'
+              courseDuration='2019 - present'
               key={1}
             />
             <AcademicCard
