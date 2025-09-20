@@ -144,6 +144,15 @@ export default function Home() {
         <>
           <Subheader title='Work Experience' icon={<IoIosLaptop />} />
           <div className={`${pageStyles.feed_child2} flex-between flex-wrap`}>
+          <ExperienceCard
+              logo='/logos/bi4all-logo.svg'
+              companyName='BI4ALL'
+              position='Trainee'
+              engagedDuration='Present'
+              skills={['AI and Data Science']}
+              jobType='Remote'
+              workingHours='Part-time'
+            />
             <ExperienceCard
               logo='/logos/bi4all-logo.svg'
               companyName='BI4ALL'
