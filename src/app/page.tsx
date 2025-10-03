@@ -94,11 +94,8 @@ export default function Home() {
           </div>
           <div>
             <p className='inline-block'>
-              I am a 17-year-old passionate student from the coastal beauty of
-              Portugal, I am currently in high-school and I have been coding for
-              3 years now. I am available for remote opportunities and
-              internships. I am also open to collaborations and projects. Feel
-              free to reach out to me.
+              I'm a 17-year-old student from Portugal finishing high school. Been coding for 3 years, currently working part-time at BI4ALL doing AI stuff while I finish school.
+              Open to remote work, internships, or project collaborations. Reach out if you want to build something together.
             </p>
           </div>
         </div>
