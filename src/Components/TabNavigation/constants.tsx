@@ -20,12 +20,11 @@ export const MEDIA_TAB_ITEMS = [
     path: 'https://github.com/diogomufasa',
     icon: <LuGithub />,
   },
-  // {
-  //   title: 'Linkedin',
-  //   path: '#',
-  //   icon: <LuLinkedin />,
-  // },
-  // { title: 'Email', path: 'mailto:diogo.soromenho@mail.com', icon: <LuMail /> },
+  {
+    title: 'Linkedin',
+    path: 'https://www.linkedin.com/in/diogo-soromenho/',
+    icon: <LuLinkedin />,
+  },
 ];
 
 // styles classname
@@ -41,5 +40,6 @@ export const styles = {
     'badge-circular shadow-xl block sm:hidden cursor-pointer fixed bottom-1 right-1 mb-[30px] mr-[20px] z-40 g',
   badgeWrapper: 'bg-red-200 animateOff',
   menuIconSize: 'text-3xl',
-  navbar2: 'w-[150px] h-screen fixed bottom-1 right-1 -mb-[70px] -mr-[30px] flex flex-col justify-center items-center z-30 rounded-tr-2xl rounded-br-2xl',
+  navbar2:
+    'w-[150px] h-screen fixed bottom-1 right-1 -mb-[70px] -mr-[30px] flex flex-col justify-center items-center z-30 rounded-tr-2xl rounded-br-2xl',
 };
