@@ -157,7 +157,7 @@ export default function Home() {
               logo='/logos/bi4all-logo.svg'
               companyName='BI4ALL'
               position='Trainee'
-              engagedDuration='Present'
+              engagedDuration='1 year'
               skills={['AI and Data Science']}
               jobType='Remote'
               workingHours='Part-time'
