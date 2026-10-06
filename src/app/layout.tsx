@@ -11,11 +11,9 @@ import { ContactMeProvider } from '@/Contexts/ContextContactMe';
 
 export const metadata: Metadata = {
   title: 'Diogo Soromenho',
-  description:
-    'Diogo Soromenho, a passionate software developer based in Portugal',
+  description: 'Diogo Soromenho, a passionate software developer based in Portugal',
   icons: 'favicon.ico',
-  keywords:
-    'Diogo Soromenho, Diogo Moreira,  Portfolio, Website, developer, software',
+  keywords: 'Diogo Soromenho, Diogo Moreira, Portfolio, Website, developer, software',
 };
 
 export default function RootLayout({
@@ -24,15 +22,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={`p-5 py-[50px]`}>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <div className="bg-grid"></div>
+        <div className="bg-glow"></div>
+        
         <SpeedInsights />
         <Analytics />
-        <div className='flex-center w-'>
+        <div className="min-h-screen flex flex-col items-center w-full pb-10">
           <ContextWrapper>
             <ContactMeProvider>
               <TabNavigation />
-              {children}
+              <main className="w-full relative z-10 flex flex-col items-center">
+                {children}
+              </main>
             </ContactMeProvider>
           </ContextWrapper>
           <Footer />

@@ -2,11 +2,11 @@
 
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { pageStyles } from '@/Constants';
-import { contactStyles } from './constant';
 import type { FormData } from '@/types';
-import { isValidEmail, sendEmail, redirectTo } from '@/utils/utils';
+import { isValidEmail, sendEmail } from '@/utils/utils';
 import { ContactMeContext } from '@/Contexts/ContextContactMe';
+import Subheader from '@/Components/Subheader/page';
+import { LuContact } from 'react-icons/lu';
 
 const ContactForm = () => {
   const { register, handleSubmit } = useForm<FormData>();
@@ -23,71 +23,63 @@ const ContactForm = () => {
         setHasContacted(true);
       }
     }, 2000);
-
-
   };
 
-
   return (
-    <>
-      <div className={pageStyles.wrapper}>
-        {HasContacted ? (
-          <div className={contactStyles.successMessage}>
-            <p>Thank you! Your message has been sent successfully!</p>
-          </div>
-        ) : (
-          <>
-        <h1>Contact Me</h1>
-        <p className='my-5'>
-          I’m eager to get your feedback! The details you need are below.
-        </p>
-        <form className={contactStyles.formContainer} onSubmit={handleSubmit(onSubmit)} >
-          <div className='flex justify-between mb-5'>
-            <div className={contactStyles.labelContainer}>
-              <label className={contactStyles.label} 
-              htmlFor='name'
-              >Name</label>
+    <div className="wrapper px-4 sm:px-0 mt-20 sm:mt-24">
+      <Subheader title="Contact Me" icon={<LuContact />} />
+      <p className="mb-8 text-[var(--muted)] text-lg">
+        Open to remote work, internships and project collaborations. My inbox is always open.
+      </p>
+
+      {HasContacted ? (
+        <div className="p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] text-center card-hover-effect">
+          <div className="text-4xl mb-4">✨</div>
+          <h3 className="text-xl font-bold mb-2 text-[var(--text)]">Message sent!</h3>
+          <p className="text-[var(--muted)]">Thank you for reaching out. I'll get back to you shortly.</p>
+        </div>
+      ) : (
+        <form className="p-6 sm:p-8 rounded-2xl border border-[var(--border)] bg-[var(--card)] card-hover-effect" onSubmit={handleSubmit(onSubmit)}>
+          <div className="flex flex-col sm:flex-row gap-6 mb-6">
+            <div className="flex-1">
+              <label className="block text-sm font-medium mb-2 text-[var(--text)]" htmlFor="name">Name</label>
               <input
-                className={contactStyles.input}
-                type='text'
-                placeholder='Will Smith'
+                className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                type="text"
+                placeholder="Will Smith"
                 {...register('name', { required: true })}
                 required
               />
             </div>
-            <div className={contactStyles.labelContainer}>
-              <label className={contactStyles.label}
-              htmlFor='email'
-              >Email</label>
+            <div className="flex-1">
+              <label className="block text-sm font-medium mb-2 text-[var(--text)]" htmlFor="email">Email</label>
               <input
-                className={contactStyles.input}
-                type='email'
+                className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--accent)] transition-colors"
+                type="email"
                 {...register('email', { required: true })}
-                placeholder='will.smith@example.com'
+                placeholder="will.smith@example.com"
                 required
               />
             </div>
           </div>
-          <div className='w-full flex flex-col'>
-            <label className={contactStyles.label}
-            htmlFor='message'
-            >Message</label>
+          
+          <div className="w-full flex flex-col mb-8">
+            <label className="block text-sm font-medium mb-2 text-[var(--text)]" htmlFor="message">Message</label>
             <textarea
-              className= {contactStyles.textarea}
-              placeholder='Write your opinion here...'
+              className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--accent)] transition-colors resize-y"
+              placeholder="Write your message here..."
               rows={5}
               {...register('message', { required: true })}
               required
             />
           </div>
-          <button className={contactStyles.submitButton}>
+          
+          <button className="w-full py-4 rounded-xl bg-[var(--text)] text-[var(--bg)] font-semibold text-lg hover:bg-[var(--accent)] hover:text-[var(--accent-ink)] transition-colors shadow-lg">
             Send Message
           </button>
         </form>
-        </>
-        )}
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 

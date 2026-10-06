@@ -23,17 +23,16 @@ export default function Projects({ projects }: ProjectsProps) {
       {[...projects]
         .sort((a, b) => b.id - a.id)
         .map((d) => (
-          <div key={d.id}>
-            <Card
-              id={d.id}
-              title={d.title}
-              tags={d.tags}
-              image={d.img_url}
-              link={d.web_url}
-              github={d.git_url}
-              description={d.description}
-            />
-          </div>
+          <Card
+            key={d.id}
+            id={d.id}
+            title={d.title}
+            tags={d.tags}
+            image={d.img_url}
+            link={d.web_url}
+            github={d.git_url}
+            description={d.description}
+          />
         ))}
     </>
   );

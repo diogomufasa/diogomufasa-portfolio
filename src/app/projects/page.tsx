@@ -18,12 +18,12 @@ export default async function ProjectFeed() {
   const projects = data ?? [];
 
   return (
-    <div className={pageStyles.wrapper}>
+    <div className="wrapper px-4 sm:px-0 mt-20 sm:mt-24">
       <Subheader title='Projects' icon={<LuSearch />} />
-      <div className={pageStyles.feed_child2}>
+      <div className="flex flex-wrap justify-between gap-y-6">
         <ProjectsFeedClient projects={projects} />
-        {projects.length === 0 && !error && <p>No projects found.</p>}
-        {error && <p>Failed to load projects.</p>}
+        {projects.length === 0 && !error && <p className="text-[var(--muted)]">No projects found.</p>}
+        {error && <p className="text-[var(--muted)]">Failed to load projects.</p>}
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import { ExperienceCardProps } from './types';
-import { HiOutlineExternalLink } from 'react-icons/hi';
-import { BsDot } from 'react-icons/bs';
 
 const ExperienceCard = ({
   logo,
@@ -14,37 +12,29 @@ const ExperienceCard = ({
   jobType,
 }: ExperienceCardProps) => {
   return (
-    <div className='experience_card w-full flex-between mb-5 animateOff'>
-      <div className='h-[70px] w-[100px] flex justify-center items-center  rounded border-r-2 border-green-500 hidden sm:flex dark:bg-slate-100'>
-        <Image 
-        src={logo}
-        width={50}
-        height={50} 
-        alt='' 
-        />
-      </div>
-      <div className='mx-0 sm:mx-5 w-full'>
-        <div className='flex-between flex-wrap'>
-          <h2 className='text-lg'>{companyName}</h2>
-          <HiOutlineExternalLink className='-mt-2 cursor-pointer hover:text-green-800' />
+    <div className='experience_card w-full mb-4 animateOff card-hover-effect p-5 sm:p-6'>
+      <div className='flex gap-4 sm:gap-6 items-start'>
+        <div className='h-[50px] w-[50px] flex justify-center items-center rounded-xl bg-white hidden sm:flex shrink-0 p-2 shadow-sm border border-[var(--border)]'>
+          <Image src={logo} width={34} height={34} alt='' className="object-contain" />
         </div>
+        <div className='w-full'>
+          <div className='flex-between flex-wrap gap-2 mb-1'>
+            <h2 className='text-lg font-semibold tracking-tight m-0 text-[var(--text)]'>{companyName}</h2>
+            <div className='font-mono text-[var(--subtle)] text-xs sm:text-sm px-2 py-1 rounded bg-[var(--bg-elev)] border border-[var(--border)]'>{engagedDuration}</div>
+          </div>
 
-        <div className='flex-between flex-wrap'>
-          <span className=''>{position}</span>
-          <span className='font-mono sm:mt-1'>{engagedDuration}</span>
-        </div>
-        <div className='flex mt-1'>
-          <div className='flex-between'>
-            <BsDot className='text-lg' />
-            <span className='text-sm'>{workingHours}</span>
+          <div className='mb-3'>
+            <span className='text-[var(--text)] font-medium'>{position}</span>
+            <span className='mx-2 text-[var(--border-strong)]'>|</span>
+            <span className='text-[var(--muted)] text-sm'>{workingHours} · {jobType}</span>
           </div>
-          <div className='flex-between mx-3'>
-            <BsDot className='text-lg' />
-            <span className='text-sm'>{jobType}</span>
-          </div>
-          <div className='flex-between'>
-            <BsDot className='text-lg' />
-            <span className='text-sm'>{skills.join(', ')}</span>
+          
+          <div className='flex flex-wrap gap-2 mt-2'>
+            {skills.map((skill, index) => (
+              <span key={index} className='font-mono text-xs text-[var(--muted)] px-2.5 py-1 rounded-md border border-[var(--border)] bg-[var(--bg-elev)]'>
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
       </div>
