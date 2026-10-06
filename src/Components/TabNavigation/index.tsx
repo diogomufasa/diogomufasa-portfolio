@@ -4,12 +4,12 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { LuLayoutDashboard, LuShoppingBag, LuContact, LuGithub, LuLinkedin } from 'react-icons/lu';
+import { LuLayoutDashboard, LuFolder, LuContact, LuGithub, LuLinkedin } from 'react-icons/lu';
 import { useTheme } from 'next-themes';
 
 const DEFAULT_TAB_ITEMS = [
   { title: 'Feed', path: '/', icon: <LuLayoutDashboard size={16} /> },
-  { title: 'Projects', path: '/projects', icon: <LuShoppingBag size={16} /> },
+  { title: 'Projects', path: '/projects', icon: <LuFolder size={16} /> },
   { title: 'Contact', path: '/contact-me', icon: <LuContact size={16} /> },
 ];
 
