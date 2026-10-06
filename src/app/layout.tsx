@@ -9,6 +9,8 @@ import ContextWrapper from '@/Contexts/ContextWrapper';
 import Footer from '@/Components/Footer';
 import { ContactMeProvider } from '@/Contexts/ContextContactMe';
 
+import MouseGlow from '@/Components/MouseGlow';
+
 export const metadata: Metadata = {
   title: 'Diogo Soromenho',
   description: 'Diogo Soromenho, a passionate software developer based in Portugal',
@@ -24,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <MouseGlow />
         <div className="bg-grid"></div>
         <div className="bg-glow"></div>
         
