@@ -1,15 +1,32 @@
 import { createClient } from '@/utils/supabase/server';
 import HomeClient from './HomeClient';
 import { Skills as DefaultSkills } from '@/Components/SkillsCard/constant';
+import * as SiIcons from 'react-icons/si';
+import * as TbIcons from 'react-icons/tb';
+import * as VscIcons from 'react-icons/vsc';
+import React from 'react';
 
 export const revalidate = 0;
+
+// Helper to resolve icon from string name
+function getIconComponent(iconName: string) {
+  if (!iconName) return null;
+  const IconComponent = (SiIcons as any)[iconName] || (TbIcons as any)[iconName] || (VscIcons as any)[iconName];
+  return IconComponent ? React.createElement(IconComponent) : null;
+}
+
+function processSkillsWithIcons(skillsGroup: any[]) {
+  if (!skillsGroup || !Array.isArray(skillsGroup)) return [];
+  return skillsGroup.map(skill => ({
+    ...skill,
+    Icon: typeof skill.Icon === 'string' ? getIconComponent(skill.Icon) : skill.Icon
+  }));
+}
 
 export default async function Page() {
   const supabase = await createClient();
 
-  // Try to fetch editable data from Supabase.
-  // We wrap in individual try-catch blocks to fallback smoothly if a table doesn't exist yet.
-  
+  // Fetch editable data from Supabase.
   let heroData = null;
   try {
     const { data } = await supabase.from('home_hero').select('*').single();
@@ -34,7 +51,7 @@ export default async function Page() {
     if (data) skillsData = data;
   } catch (e) {}
 
-  // Fallbacks if data doesn't exist in Supabase (which it won't until the user creates the tables)
+  // Fallbacks if data doesn't exist in Supabase
   const defaultHero = {
     statusText: 'Open to internships & collaborations',
     title: "Hey, I'm Diogo.",
@@ -82,18 +99,17 @@ export default async function Page() {
     }
   ];
 
-  const defaultSkills = {
-    frontend: DefaultSkills.frontend,
-    backend: DefaultSkills.backend,
-    services: DefaultSkills.services,
-    database: DefaultSkills.database
+  // Process skills to attach icon components
+  const finalSkills = {
+    frontend: processSkillsWithIcons(skillsData?.frontend || DefaultSkills.frontend),
+    backend: processSkillsWithIcons(skillsData?.backend || DefaultSkills.backend),
+    services: processSkillsWithIcons(skillsData?.services || DefaultSkills.services),
+    database: processSkillsWithIcons(skillsData?.database || DefaultSkills.database)
   };
 
-  // Merge fetched data with fallbacks
   const finalHero = heroData || defaultHero;
   const finalExperiences = experiencesData || defaultExperiences;
   const finalAcademics = academicsData || defaultAcademics;
-  const finalSkills = skillsData || defaultSkills;
 
   return (
     <HomeClient 

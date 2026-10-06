@@ -14,7 +14,6 @@ import MouseGlow from '@/Components/MouseGlow';
 export const metadata: Metadata = {
   title: 'Diogo Soromenho',
   description: 'Diogo Soromenho, a passionate software developer based in Portugal',
-  icons: 'favicon.ico',
   keywords: 'Diogo Soromenho, Diogo Moreira, Portfolio, Website, developer, software',
 };
 

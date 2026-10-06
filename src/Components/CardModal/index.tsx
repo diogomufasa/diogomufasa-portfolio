@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuGithub, LuX, LuExternalLink } from 'react-icons/lu';
@@ -28,6 +29,12 @@ export default function ProjectModal({
   link,
   github,
 }: ProjectModalProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -42,7 +49,9 @@ export default function ProjectModal({
     };
   }, [isOpen, onClose]);
 
-  return (
+  if (!mounted) return null;
+
+  const modalContent = (
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center sm:p-6" role="dialog" aria-modal="true">
@@ -144,4 +153,6 @@ export default function ProjectModal({
       )}
     </AnimatePresence>
   );
+
+  return createPortal(modalContent, document.body);
 }
