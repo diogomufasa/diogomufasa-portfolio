@@ -7,6 +7,7 @@ import { isValidEmail, sendEmail } from '@/utils/utils';
 import { ContactMeContext } from '@/Contexts/ContextContactMe';
 import Subheader from '@/Components/Subheader/page';
 import { LuContact } from 'react-icons/lu';
+import { motion } from 'framer-motion';
 
 const ContactForm = () => {
   const { register, handleSubmit } = useForm<FormData>();
@@ -26,7 +27,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="wrapper px-4 sm:px-0 mt-20 sm:mt-24">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="wrapper px-4 sm:px-0 mt-20 sm:mt-24"
+    >
       <Subheader title="Contact Me" icon={<LuContact />} />
       <p className="mb-8 text-[var(--muted)] text-lg">
         Open to remote work, internships and project collaborations. My inbox is always open.
@@ -79,7 +85,7 @@ const ContactForm = () => {
           </button>
         </form>
       )}
-    </div>
+    </motion.div>
   );
 };
 

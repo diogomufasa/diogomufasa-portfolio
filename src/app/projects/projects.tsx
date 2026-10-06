@@ -22,9 +22,10 @@ export default function Projects({ projects }: ProjectsProps) {
     <>
       {[...projects]
         .sort((a, b) => b.id - a.id)
-        .map((d) => (
+        .map((d, index) => (
           <Card
             key={d.id}
+            index={index}
             id={d.id}
             title={d.title}
             tags={d.tags}

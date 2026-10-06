@@ -1,9 +1,16 @@
 import React from 'react';
 import { SkillsCardProps } from './types';
+import { motion } from 'framer-motion';
 
 const SkillsCard = ({ title, items }: SkillsCardProps) => {
   return (
-    <div className='skill_card w-full card-hover-effect p-5 sm:p-6 mb-2 animateOff'>
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4 }}
+      className='w-full card-hover-effect p-5 sm:p-6 mb-2'
+    >
       <h4 className='font-mono text-xs font-semibold text-[var(--subtle)] uppercase tracking-widest mb-4'>
         {title}
       </h4>
@@ -18,7 +25,7 @@ const SkillsCard = ({ title, items }: SkillsCardProps) => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

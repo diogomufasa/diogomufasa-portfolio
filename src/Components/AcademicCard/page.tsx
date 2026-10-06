@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { AcademicCardProps } from './types';
+import { motion } from 'framer-motion';
 
 const AcademicCard = ({
   logo,
@@ -9,7 +10,13 @@ const AcademicCard = ({
   courseDuration,
 }: AcademicCardProps) => {
   return (
-    <div className='sm:ml-[60px] academic_card animateOff w-full flex-between mb-5 card-hover-effect p-4'>
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
+      className='sm:ml-[60px] w-full flex-between mb-5 card-hover-effect p-4'
+    >
       <div className='h-[60px] w-[80px] flex justify-center items-center rounded-lg bg-white hidden sm:flex overflow-hidden shrink-0'>
         {typeof logo === 'string' ? <Image src={logo} width={40} height={40} alt='' className="object-contain" style={{ width: 'auto', height: 'auto' }} /> : <>{logo}</>}
       </div>
@@ -22,7 +29,7 @@ const AcademicCard = ({
           <span className='text-[var(--muted)] font-medium'>{courseName}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

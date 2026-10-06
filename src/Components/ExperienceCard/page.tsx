@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { ExperienceCardProps } from './types';
+import { motion } from 'framer-motion';
 
 const ExperienceCard = ({
   logo,
@@ -12,7 +13,13 @@ const ExperienceCard = ({
   jobType,
 }: ExperienceCardProps) => {
   return (
-    <div className='experience_card w-full mb-4 animateOff card-hover-effect p-5 sm:p-6'>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
+      className='w-full mb-4 card-hover-effect p-5 sm:p-6'
+    >
       <div className='flex gap-4 sm:gap-6 items-start'>
         <div className='h-[50px] w-[50px] flex justify-center items-center rounded-xl bg-white hidden sm:flex shrink-0 p-2 shadow-sm border border-[var(--border)]'>
           <Image src={logo} width={34} height={34} alt='' className="object-contain" style={{ width: 'auto', height: 'auto' }} />
@@ -38,7 +45,7 @@ const ExperienceCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

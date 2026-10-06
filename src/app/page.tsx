@@ -1,14 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { HiAcademicCap } from 'react-icons/hi';
 import { MdWorkspacePremium } from 'react-icons/md';
-import { AiFillCheckCircle } from 'react-icons/ai';
-import { GiSandsOfTime } from 'react-icons/gi';
 import { IoIosLaptop } from 'react-icons/io';
 import { LuArrowRight } from 'react-icons/lu';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { pageStyles } from '@/Constants';
 import AcademicCard from '@/Components/AcademicCard/page';
@@ -16,54 +14,17 @@ import ExperienceCard from '@/Components/ExperienceCard/page';
 import SkillsCard from '@/Components/SkillsCard/page';
 import { Skills } from '@/Components/SkillsCard/constant';
 import Subheader from '@/Components/Subheader/page';
-import JobStatus from '@/Components/JobStatus';
 
 export default function Home() {
-  useEffect(() => {
-    const observers = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('animateOff');
-          entry.target.classList.add('animateOn');
-
-          if (entry.target.className.includes('academic_card')) {
-            const dom: any = document.querySelector('.verticalLineWrapper .verticalLine');
-            const start1: any = document.getElementById('start1');
-            const stop1: any = document.getElementById('stop1');
-            
-            if(start1 && stop1) {
-              start1.style.display = 'flex';
-              stop1.style.display = 'none';
-              let height = 10;
-  
-              const interval = setInterval(() => {
-                height += 10;
-                if (dom) dom.style.height = `${height}px`;
-  
-                if (height > 215) {
-                  start1.style.display = 'none';
-                  stop1.style.display = 'flex';
-                  clearInterval(interval);
-                }
-              }, 50);
-            }
-          }
-        }
-      });
-    }, { threshold: 0.1 });
-
-    const blocks = document.querySelectorAll('.animateOff');
-    blocks.forEach((ele) => observers.observe(ele));
-
-    return () => {
-      blocks.forEach((ele) => observers.unobserve(ele));
-    };
-  }, []);
-
   return (
     <div className="wrapper px-4 sm:px-0 mt-16 sm:mt-24">
       {/* HERO SECTION */}
-      <header className="mb-20 animateOff">
+      <motion.header 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mb-20"
+      >
         <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 rounded-full border border-[var(--border)] bg-[var(--card)] text-sm font-medium text-[var(--muted)] font-mono">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
@@ -109,12 +70,16 @@ export default function Home() {
             <span className="text-sm font-mono text-[var(--subtle)]">currently based</span>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       <div className={pageStyles.divider}></div>
 
       {/* EXPERIENCE */}
-      <div className="animateOff">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <Subheader title="Work Experience" icon={<IoIosLaptop />} />
         <div className={`${pageStyles.feed_child2} gap-6`}>
           <ExperienceCard
@@ -136,12 +101,16 @@ export default function Home() {
             workingHours="Full-time"
           />
         </div>
-      </div>
+      </motion.div>
 
       <div className={pageStyles.divider}></div>
 
       {/* ACADEMICS */}
-      <div className="animateOff">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <Subheader title="Academic Qualification" icon={<HiAcademicCap />} />
         <div className={`${pageStyles.feed_child2} relative`}>
           <div className="verticalLineWrapper invisible sm:visible absolute left-12 top-10 h-[calc(100%-40px)]">
@@ -162,12 +131,16 @@ export default function Home() {
             key={2}
           />
         </div>
-      </div>
+      </motion.div>
 
       <div className={pageStyles.divider}></div>
 
       {/* SKILLS */}
-      <div className="animateOff">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <Subheader title="Skills And Knowledge" icon={<MdWorkspacePremium />} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
           <SkillsCard title="Frontend" items={Skills.frontend} />
@@ -175,7 +148,7 @@ export default function Home() {
           <SkillsCard title="Services" items={Skills.services} />
           <SkillsCard title="Database" items={Skills.database} />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
