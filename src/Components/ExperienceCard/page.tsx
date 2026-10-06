@@ -15,7 +15,7 @@ const ExperienceCard = ({
     <div className='experience_card w-full mb-4 animateOff card-hover-effect p-5 sm:p-6'>
       <div className='flex gap-4 sm:gap-6 items-start'>
         <div className='h-[50px] w-[50px] flex justify-center items-center rounded-xl bg-white hidden sm:flex shrink-0 p-2 shadow-sm border border-[var(--border)]'>
-          <Image src={logo} width={34} height={34} alt='' className="object-contain" />
+          <Image src={logo} width={34} height={34} alt='' className="object-contain" style={{ width: 'auto', height: 'auto' }} />
         </div>
         <div className='w-full'>
           <div className='flex-between flex-wrap gap-2 mb-1'>

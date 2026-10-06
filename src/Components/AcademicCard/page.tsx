@@ -11,7 +11,7 @@ const AcademicCard = ({
   return (
     <div className='sm:ml-[60px] academic_card animateOff w-full flex-between mb-5 card-hover-effect p-4'>
       <div className='h-[60px] w-[80px] flex justify-center items-center rounded-lg bg-white hidden sm:flex overflow-hidden shrink-0'>
-        {typeof logo === 'string' ? <Image src={logo} width={40} height={40} alt='' className="object-contain" /> : <>{logo}</>}
+        {typeof logo === 'string' ? <Image src={logo} width={40} height={40} alt='' className="object-contain" style={{ width: 'auto', height: 'auto' }} /> : <>{logo}</>}
       </div>
       <div className='sm:mx-5 w-full'>
         <div className='flex-between flex-wrap mb-1'>
